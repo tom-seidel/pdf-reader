@@ -1,4 +1,5 @@
-import { app, BrowserWindow, screen } from 'electron'
+//import { app, BrowserWindow, screen } from 'electron'
+import { app, BrowserWindow } from 'electron'
 //import { createRequire } from 'node:module'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
@@ -28,11 +29,13 @@ let win: BrowserWindow | null
 
 function createWindow() {
   // Get screen size
-  const { width, height } = screen.getPrimaryDisplay().workAreaSize
+  //const { width, height } = screen.getPrimaryDisplay().workAreaSize
 
   win = new BrowserWindow({
-    width: width,
-    height: height,
+    //width: width,
+    //height: height,
+    width: 800,
+    height: 600,
     icon: path.join(process.env.VITE_PUBLIC, 'electron-vite.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.mjs'),
